@@ -1,8 +1,8 @@
 name: Test project
 
-#on: [pull_request]
-on:
-  workflow_dispatch: {}
+on: [pull_request]
+#on:
+#  workflow_dispatch: {}
 
 jobs:
   testAllModes:
@@ -18,7 +18,7 @@ jobs:
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          projectPath: path/to/your/project
+          projectPath: .
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           testMode: EditMode
       - uses: actions/upload-artifact@v2
